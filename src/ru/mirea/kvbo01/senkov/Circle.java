@@ -2,11 +2,13 @@ package ru.mirea.kvbo01.senkov;
 import java.lang.Math;
 public class Circle extends Shape
 {
-private double r;
+protected double radius;
 
-public Circle(double r)
+public Circle(double radius, String color,boolean filled)
 {
-    this.r=r;
+    this.radius = radius;
+    this.color=color;
+    this.filled=filled;
 }
     @Override
     public String getType() {
@@ -15,18 +17,20 @@ public Circle(double r)
 
     @Override
     public double getArea() {
-        return Math.PI*r*r;
+        return Math.PI* radius * radius;
     }
 
     @Override
     public double getPerimetr() {
-        return 2*Math.PI*r;
+        return 2*Math.PI* radius;
     }
 
     @Override
     public String toString() {
         return "Circle{" +
-                "r=" + r +
+                "radius=" + radius +
+                ", color='" + color + '\'' +
+                ", filled=" + filled +
                 '}';
     }
 }

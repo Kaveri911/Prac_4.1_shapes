@@ -1,11 +1,14 @@
 package ru.mirea.kvbo01.senkov;
 
 public class Square extends Shape{
-    private double a;
+    protected double side;
 
-    public Square(double a)
+    public Square(double side, String color, boolean filled)
     {
-        this.a=a;
+        this.side = side;
+        this.color=color;
+        this.filled=filled;
+
     }
 
     @Override
@@ -15,18 +18,20 @@ public class Square extends Shape{
 
     @Override
     public double getArea() {
-        return this.a*this.a;
+        return this.side *this.side;
     }
 
     @Override
     public double getPerimetr() {
-        return this.a+this.a;
+        return this.side +this.side;
     }
 
     @Override
     public String toString() {
         return "Square{" +
-                "a=" + a +
+                "side=" + side +
+                ", color='" + color + '\'' +
+                ", filled=" + filled +
                 '}';
     }
 }
